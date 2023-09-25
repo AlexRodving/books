@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "audio_format": {
+      "type": "boolean",
+      "required": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::author.author",
+      "mappedBy": "book"
+    },
+    "artists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::artist.artist",
+      "mappedBy": "book"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "duration": {
+      "type": "decimal",
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true
+    },
+    "series": {
+      "type": "string"
+    },
+    "cycle": {
+      "type": "string"
+    },
+    "publication": {
+      "type": "date"
+    },
+    "audio": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "txt": {
+      "type": "richtext"
+    },
+    "executors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::executor.executor",
+      "mappedBy": "book"
+    },
+    "txt_format": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

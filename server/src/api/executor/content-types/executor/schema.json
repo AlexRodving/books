@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "executors",
+  "info": {
+    "singularName": "executor",
+    "pluralName": "executors",
+    "displayName": "executor"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "book": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book.book",
+      "inversedBy": "executors"
+    }
+  }
+}
