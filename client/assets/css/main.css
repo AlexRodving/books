@@ -1,0 +1,544 @@
+    /* Author: Нуржанов Олег
+    URL: https://nastyle.pro/
+    Email: oleg@nastyle.pro 
+
+    Page: Стили */
+
+:root{
+    --color-light: #f1f1f1;
+    --color-bg: #202423;
+    --color-label: #666666;
+    --color-block: #252928;
+    --color-button: #50c878;
+
+    --width-max: 360px;
+    --width-min: 330px;
+}
+
+/* [light]{
+    --color-light: #f1f1f1;
+    --color-bg: #202423;
+    --color-label: #666666;
+    --color-block: #252928;
+    --color-button: #50c878;
+} */
+
+@font-face {
+    font-family: "Amaz";
+    src: url(~/assets/fonts/amaz.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: var(--color-bg);
+}
+
+body {
+   margin: auto;
+    width: var(--width-max);
+    color: var(--color-label);
+}
+
+.ads {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light);
+    box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.1);
+    margin-top: 50px;
+    border-radius: 10px;
+    width: 350px;
+    height: 50px;
+}
+
+a {
+    color: var(--color-label);
+    text-decoration: none;
+}
+
+a:hover {
+    filter: brightness(1.5);
+    transition: all 0.3s ease;
+}
+
+a:active {
+    filter: brightness(1);
+}
+
+h1{
+    font-family: "Amaz";
+    font-size: 38px;
+    font-weight: lighter;
+    color: var(--color-light);
+    filter: brightness(0.8);
+    letter-spacing: .3rem;
+}
+.h1{
+    font-family: "Amaz";
+    font-size: 38px;
+    font-weight: lighter;
+    color: var(--color-light);
+    filter: brightness(0.8);
+    letter-spacing: .3rem;
+}
+
+h2{
+    font-size: 14px;
+    filter: brightness(0.8);
+    letter-spacing: .2rem;
+} 
+
+h3{
+    font-size: 14px;
+    color: var(--color-light);
+}
+
+h4{
+    font-family: "Amaz";
+    font-size: 38px;
+    font-weight: lighter;
+    color: var(--color-light);
+    filter: brightness(0.8);
+    letter-spacing: .3rem;
+}
+
+img{
+    object-fit: contain;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ПАРАМЕТРЫ, ОТСТУПЫ И ПОЗИЦИОНИРОВАНИЕ */
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.g5 {
+    gap: 5px;
+}
+
+.g10 {
+    gap: 10px;
+}
+
+.g20 {
+    gap: 20px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt120 {
+    margin-top: 120px;
+}
+
+.mt240 {
+    margin-top: 240px;
+}
+
+.max {
+    width: var(--width-max);
+}
+
+.min {
+    width: var(--width-min);
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8em;
+    background-color: var(--color-block);
+    border-radius: 0 0 10px 10px;
+    height: 60px;
+    width: var(--width-max);
+    position: relative;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    display: flex;
+    flex-direction: row 
+}
+
+li {
+    list-style: none;
+}
+
+.minibar {
+    width: 30px;
+    height: 23px;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-block);
+    border-radius: 10px 10px 0 0;
+    padding: 1em;
+    & a {
+        text-decoration: underline;
+    
+    }
+}
+
+/* MAIN */
+
+.search {
+    display: flex;
+    align-items: center;
+    width: var(--width-max);
+    font-size: 14px;
+}
+input[type="search"] {
+    -webkit-appearance: none;
+    background-color: var(--color-block);
+    color: var(--color-label);
+    border: solid 1px var(--color-label);
+    border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+}
+
+#search {
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+}
+
+
+
+#btn_search {
+    border: solid 1px var(--color-label);
+    border-radius: 0 10px 10px 0;
+    background-color: var(--color-label);
+    color: var(--color-block);
+    width: 20%;
+    height: 40px;
+    padding: 10px;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    width: var(--width-max);
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 10px;
+
+    & a {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        background-color: var(--color-block);
+        border-radius: 10px;
+        width: var(--width-min);
+        padding: 1em;
+    }
+
+    & p:nth-child(1) {
+        color: var(--color-light);
+    }
+}
+
+.preview {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: var(--width-max);
+}
+
+.buttonLeft,
+.buttonRight {
+    & a {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--color-block);
+        color: var(--color-light);
+        border-radius: 10px;
+        width: 160px;
+        height: 160px;
+    }
+
+    & span {
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        font-size: 16px;
+    } 
+}
+
+.buttonLeft span {
+    margin-right: 30px;
+}
+
+.buttonRight span {
+    margin-left: 30px;
+    letter-spacing: .2rem;
+}
+
+.listing {
+    margin-top: 10px;
+    width: var(--width-max);
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-block);
+    border-radius: 10px;
+    padding: 10px;
+
+    &:hover .btn {
+        background-color: var(--color-button);
+        transition: all 0.5s ease;
+        filter: brightness(0.8);
+    }
+
+    &:active .btn {
+        filter: brightness(0.8);
+    }
+}
+
+.btn {
+    border: 1px solid var(--color-button);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+
+.author {
+    display: flex;
+    gap: 5px;
+    &:before {
+        content: '';
+        background-image: url(~/assets/img/pen.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        flex-direction: row;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.executor {
+    display: flex;
+    gap: 5px;
+    &:before {
+        content: '';
+        background-image: url(~/assets/img/micro.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: flex;
+        flex-direction: row;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: var(--width-max);
+    overflow: hidden;   
+}
+
+#feedback {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cover {
+    margin-top: -10%;
+    width: var(--width-max);
+    height: var(--width-max);
+    object-fit: cover;
+    border-radius: 0 0 10px 10px;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    & a { text-transform: uppercase; }
+    & a:hover { color: var(--color-button)}
+}
+
+.pointer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.point {
+    background-color: var(--color-block);
+    border-radius: 10px;
+    padding: 10px;
+
+    & h3 {
+        text-indent: 10px;
+        font-weight: normal;
+        margin-top: -15px;
+    }
+
+    & a {
+        text-decoration: underline;
+    }
+}
+
+.authorPointer::before {
+    content: "Автор";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.agePointer:before {
+    content: "Год издания";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.designerPointer:before {
+    content: "Художник";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.descriptionPointer:before {
+    content: "Описание";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.seriesPointer:before {
+    content: "Серия";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.cyclePointer:before {
+    content: "Цикл";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.executorPointer:before {
+    content: "Исполнитель";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.executorOther:before {
+    content: "В другом исполнении";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.datePointer:before {
+    content: "Дата добавления";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.viewPointer:before {
+    content: "Прослушано";
+    position: relative;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+}
+
+.new {
+    display: block;
+
+    & h2 {
+        letter-spacing: .1rem;
+    }
+}
+
+button.subscribe {
+    color: var(--color-label)    
+}
+
+.subscribe:hover {color: var(--color-light)}
+.subscribe:active {color: var(--color-label)}
+.subscribe:checked {color: var(--color-bg)}
+
+.collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 45%;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+
+    & img {
+        width: 100%;
+    }
+}
