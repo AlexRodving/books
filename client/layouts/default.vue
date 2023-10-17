@@ -3,13 +3,13 @@
         <NuxtLink to="/" class="h1">postlit.ru</NuxtLink>
             <div id="nav">
                 <NuxtLink to="/nav">
-                    <img src="img/burger.svg" alt="Меню" class="minibar">
+                    <img src="../assets/img/burger.svg" alt="Меню" class="minibar">
                 </NuxtLink>
             </div>
     </header>
-    <slot />
+    <slot class="slot" />
 
-    <footer class="mt30">
+    <footer class="mt120">
         <p>ПостЛит © 2023</p>
         <p class="mt20">Портал постапокалиптических электронных и аудиокниг, читай и слушай онлайн бесплатно, без подписки и регистрации на <a href="http:/postlit.ru"><strong>Postlit.ru</strong></a></p>
         <div class="column g5 mt30">
@@ -31,4 +31,9 @@
 .router-link-exact-active {
   color: #12b488;
 }
+header{
+    position: fixed;
+    top:0;
+}
+
 </style>

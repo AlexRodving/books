@@ -4,27 +4,26 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author",
-    "description": ""
+    "displayName": "author"
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "surname": {
       "type": "string",
+      "unique": true,
       "required": true
     },
-    "book": {
+    "name": {
+      "type": "string"
+    },
+    "books": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::book.book",
-      "inversedBy": "authors"
+      "mappedBy": "authors"
     }
   }
 }

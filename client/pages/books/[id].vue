@@ -1,7 +1,7 @@
 <template>
     <main>
         <div>
-            <img src="~/public/img/cover/01.jpeg" alt="Обложка" class="cover">
+            <img src="~/assets/img/cover.jpeg" alt="Обложка" class="cover">
         </div>
         <div class="option mt20">
             <a href="./audio.html">Слушать</a> | <a href="#">Читать</a>

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "book",
     "pluralName": "books",
-    "displayName": "Book",
+    "displayName": "book",
     "description": ""
   },
   "options": {
@@ -14,12 +14,22 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "unique": false
-    },
-    "audio_format": {
-      "type": "boolean",
       "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "books"
+    },
+    "src_audio": {
+      "type": "string"
+    },
+    "src_text": {
+      "type": "string"
     },
     "cover": {
       "type": "media",
@@ -29,59 +39,23 @@
         "images"
       ]
     },
-    "authors": {
+    "cycles": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::author.author",
-      "mappedBy": "book"
-    },
-    "artists": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::artist.artist",
-      "mappedBy": "book"
-    },
-    "description": {
-      "type": "text",
-      "required": true
-    },
-    "duration": {
-      "type": "decimal",
-      "required": true
-    },
-    "year": {
-      "type": "integer",
-      "required": true
+      "relation": "manyToMany",
+      "target": "api::cycle.cycle",
+      "inversedBy": "books"
     },
     "series": {
-      "type": "string"
-    },
-    "cycle": {
-      "type": "string"
-    },
-    "publication": {
-      "type": "date"
-    },
-    "audio": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "audios"
-      ]
-    },
-    "txt": {
-      "type": "richtext"
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::serie.serie",
+      "inversedBy": "books"
     },
     "executors": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::executor.executor",
-      "mappedBy": "book"
-    },
-    "txt_format": {
-      "type": "boolean",
-      "required": true
+      "inversedBy": "books"
     }
   }
 }

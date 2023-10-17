@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * artist service
+ * cycle service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::artist.artist');
+module.exports = createCoreService('api::cycle.cycle');

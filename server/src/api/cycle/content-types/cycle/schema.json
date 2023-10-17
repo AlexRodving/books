@@ -1,28 +1,25 @@
 {
   "kind": "collectionType",
-  "collectionName": "executors",
+  "collectionName": "cycles",
   "info": {
-    "singularName": "executor",
-    "pluralName": "executors",
-    "displayName": "executor"
+    "singularName": "cycle",
+    "pluralName": "cycles",
+    "displayName": "cycle"
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "surname": {
+    "name": {
       "type": "string",
       "required": true
-    },
-    "name": {
-      "type": "string"
     },
     "books": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::book.book",
-      "mappedBy": "executors"
+      "mappedBy": "cycles"
     }
   }
 }

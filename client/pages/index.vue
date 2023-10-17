@@ -1,5 +1,5 @@
 <template>
-    <main class="mt20">
+    <main class="mt120">
         <div class="search">
             <input type="search" name="name" placeholder="Книга, серия, автор, жанр, исполнитель" id="search">
             <button type="button" id="btn_search">Поиск</button>
@@ -18,12 +18,12 @@
         </div>
         <div class="preview">
             <div class="buttonLeft"><NuxtLink to="audiolist">
-                <img src="img/stalkerLeft.png" alt="*">
+                <img src="../assets/img/stalkerLeft.png" alt="*">
                 <span>СЛУШАТЬ</span>
             </NuxtLink></div>
             <div class="buttonRight"><NuxtLink to="booklist">
                 <span>ЧИТАТЬ</span>
-                <img src="img/stalkerRight.png" alt="*">
+                <img src="../assets/img/stalkerRight.png" alt="*">
             </NuxtLink></div>
         </div>
         <div class="ads"><h2>Яндекс.Директ</h2></div>
@@ -35,58 +35,58 @@
             <div class="g10 column">
                 <NuxtLink to="books/1" class="block">
                     <div class="row g20">
-                        <img src="img/miniCover.png" alt="*">
+                        <img src="../assets/img/miniCover.png" alt="*">
                         <div class="column g5">
                             <h3>Мечта на поражение</h3>
                             <p class="author">Алексей Калугин</p>
                             <p class="executor">DanmaxX</p>
                         </div>
                     </div>
-                    <img src="img/play.svg" alt="*" class="btn">
+                    <img src="../assets/img/play.svg" alt="*" class="btn">
                 </NuxtLink>
                 <NuxtLink to="books/1" class="block">
                     <div class="row g20">
-                        <img src="img/miniCover.png" alt="*">
+                        <img src="../assets/img/miniCover.png" alt="*">
                         <div class="column g5">
                             <h3>Мечта на поражение</h3>
                             <p class="author">Алексей Калугин</p>
                             <p class="executor">DanmaxX</p>
                         </div>
                     </div>
-                    <img src="img/play.svg" alt="*" class="btn">
+                    <img src="../assets/img/play.svg" alt="*" class="btn">
                 </NuxtLink>
                 <NuxtLink to="books/1" class="block">
                     <div class="row g20">
-                        <img src="img/miniCover.png" alt="*">
+                        <img src="../assets/img/miniCover.png" alt="*">
                         <div class="column g5">
                             <h3>Мечта на поражение</h3>
                             <p class="author">Алексей Калугин</p>
                             <p class="executor">DanmaxX</p>
                         </div>
                     </div>
-                    <img src="img/play.svg" alt="*" class="btn">
+                    <img src="../assets/img/play.svg" alt="*" class="btn">
                 </NuxtLink>
                 <NuxtLink to="books/1" class="block">
                     <div class="row g20">
-                        <img src="img/miniCover.png" alt="*">
+                        <img src="../assets/img/miniCover.png" alt="*">
                         <div class="column g5">
                             <h3>Мечта на поражение</h3>
                             <p class="author">Алексей Калугин</p>
                             <p class="executor">DanmaxX</p>
                         </div>
                     </div>
-                    <img src="img/play.svg" alt="*" class="btn">
+                    <img src="../assets/img/play.svg" alt="*" class="btn">
                 </NuxtLink>
                 <NuxtLink to="books/1" class="block">
                     <div class="row g20">
-                        <img src="img/miniCover.png" alt="*">
+                        <img src="../assets/img/miniCover.png" alt="*">
                         <div class="column g5">
                             <h3>Мечта на поражение</h3>
                             <p class="author">Алексей Калугин</p>
                             <p class="executor">DanmaxX</p>
                         </div>
                     </div>
-                    <img src="img/play.svg" alt="*" class="btn">
+                    <img src="../assets/img/play.svg" alt="*" class="btn">
                 </NuxtLink>
             </div>
         </div>
@@ -97,62 +97,62 @@
         <div class="mt20 max">
             <div class="collection">
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Интеллигентный сталкер</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>
                 <NuxtLink to="books/1" class="book">
-                    <img src="img/cover/01.jpeg" alt="*">
+                    <img src="../assets/img/cover.jpeg" alt="*">
                     <p>Алексей Калугин</p>
                     <strong>Мечта на поражение</strong>
                 </NuxtLink>

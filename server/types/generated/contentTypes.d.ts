@@ -676,59 +676,22 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiArtistArtist extends Schema.CollectionType {
-  collectionName: 'artists';
-  info: {
-    singularName: 'artist';
-    pluralName: 'artists';
-    displayName: 'Artist';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    surname: Attribute.String & Attribute.Required;
-    book: Attribute.Relation<
-      'api::artist.artist',
-      'manyToOne',
-      'api::book.book'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::artist.artist',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::artist.artist',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiAuthorAuthor extends Schema.CollectionType {
   collectionName: 'authors';
   info: {
     singularName: 'author';
     pluralName: 'authors';
-    displayName: 'Author';
-    description: '';
+    displayName: 'author';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    surname: Attribute.String & Attribute.Required;
-    book: Attribute.Relation<
+    surname: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String;
+    books: Attribute.Relation<
       'api::author.author',
-      'manyToOne',
+      'manyToMany',
       'api::book.book'
     >;
     createdAt: Attribute.DateTime;
@@ -753,7 +716,7 @@ export interface ApiBookBook extends Schema.CollectionType {
   info: {
     singularName: 'book';
     pluralName: 'books';
-    displayName: 'Book';
+    displayName: 'book';
     description: '';
   };
   options: {
@@ -761,38 +724,70 @@ export interface ApiBookBook extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    audio_format: Attribute.Boolean & Attribute.Required;
-    cover: Attribute.Media;
+    description: Attribute.Text;
     authors: Attribute.Relation<
       'api::book.book',
-      'oneToMany',
+      'manyToMany',
       'api::author.author'
     >;
-    artists: Attribute.Relation<
+    src_audio: Attribute.String;
+    src_text: Attribute.String;
+    cover: Attribute.Media;
+    cycles: Attribute.Relation<
       'api::book.book',
-      'oneToMany',
-      'api::artist.artist'
+      'manyToMany',
+      'api::cycle.cycle'
     >;
-    description: Attribute.Text & Attribute.Required;
-    duration: Attribute.Decimal & Attribute.Required;
-    year: Attribute.Integer & Attribute.Required;
-    series: Attribute.String;
-    cycle: Attribute.String;
-    publication: Attribute.Date;
-    audio: Attribute.Media;
-    txt: Attribute.RichText;
+    series: Attribute.Relation<
+      'api::book.book',
+      'manyToMany',
+      'api::serie.serie'
+    >;
     executors: Attribute.Relation<
       'api::book.book',
-      'oneToMany',
+      'manyToMany',
       'api::executor.executor'
     >;
-    txt_format: Attribute.Boolean & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCycleCycle extends Schema.CollectionType {
+  collectionName: 'cycles';
+  info: {
+    singularName: 'cycle';
+    pluralName: 'cycles';
+    displayName: 'cycle';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    books: Attribute.Relation<
+      'api::cycle.cycle',
+      'manyToMany',
+      'api::book.book'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cycle.cycle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cycle.cycle',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -808,11 +803,11 @@ export interface ApiExecutorExecutor extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
     surname: Attribute.String & Attribute.Required;
-    book: Attribute.Relation<
+    name: Attribute.String;
+    books: Attribute.Relation<
       'api::executor.executor',
-      'manyToOne',
+      'manyToMany',
       'api::book.book'
     >;
     createdAt: Attribute.DateTime;
@@ -832,33 +827,34 @@ export interface ApiExecutorExecutor extends Schema.CollectionType {
   };
 }
 
-export interface ApiRatingRating extends Schema.CollectionType {
-  collectionName: 'ratings';
+export interface ApiSerieSerie extends Schema.CollectionType {
+  collectionName: 'series';
   info: {
-    singularName: 'rating';
-    pluralName: 'ratings';
-    displayName: 'rating';
+    singularName: 'serie';
+    pluralName: 'series';
+    displayName: ' serie';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
-    book: Attribute.Relation<
-      'api::rating.rating',
-      'oneToOne',
+    name: Attribute.String & Attribute.Required;
+    books: Attribute.Relation<
+      'api::serie.serie',
+      'manyToMany',
       'api::book.book'
     >;
-    views: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::rating.rating',
+      'api::serie.serie',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::rating.rating',
+      'api::serie.serie',
       'oneToOne',
       'admin::user'
     > &
@@ -882,11 +878,11 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::artist.artist': ApiArtistArtist;
       'api::author.author': ApiAuthorAuthor;
       'api::book.book': ApiBookBook;
+      'api::cycle.cycle': ApiCycleCycle;
       'api::executor.executor': ApiExecutorExecutor;
-      'api::rating.rating': ApiRatingRating;
+      'api::serie.serie': ApiSerieSerie;
     }
   }
 }

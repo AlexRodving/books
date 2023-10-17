@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * artist router
+ * cycle router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::artist.artist');
+module.exports = createCoreRouter('api::cycle.cycle');

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * rating controller
+ * serie controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::rating.rating');
+module.exports = createCoreController('api::serie.serie');

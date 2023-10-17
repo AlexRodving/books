@@ -1,28 +1,25 @@
 {
   "kind": "collectionType",
-  "collectionName": "executors",
+  "collectionName": "series",
   "info": {
-    "singularName": "executor",
-    "pluralName": "executors",
-    "displayName": "executor"
+    "singularName": "serie",
+    "pluralName": "series",
+    "displayName": " serie"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "surname": {
+    "name": {
       "type": "string",
       "required": true
-    },
-    "name": {
-      "type": "string"
     },
     "books": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::book.book",
-      "mappedBy": "executors"
+      "mappedBy": "series"
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <main class="mt30">
+    <main class="mt120">
         <div class="max">
             <h3>Контакты</h3>
             <p class="mt20">Почта для связи: <span><a href="mailto:postlit@gmail.com">postlit@gmail.com</a></span></p>
